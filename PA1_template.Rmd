@@ -18,7 +18,7 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 ```{r setup_options, echo=FALSE}
 library(knitr, markdown)
 setwd("C:/Tahera/Personal/Coursera/Reproducible_Research/PA1")
-opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo=TRUE, fig.path='figures/PA-', fig.show='asis')
+opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo=TRUE)
 ```
 
 ### 1. Loading and preprocessing the data
@@ -106,9 +106,6 @@ library(ggplot2)
 qplot(x = interval, y = AvgSteps, data = NewData, geom = c("line"), facets = day~., 
       xlab= "Time Interval (minutes)", ylab = "Average Number of Steps", main = "Activity Patterns Between Weekdays and Weekends")
 
-```
-```{r, include=FALSE}
-   file.copy(from="PA1_template.Rmd", to="README.md", copy.mode=TRUE)
 ```
 
 
