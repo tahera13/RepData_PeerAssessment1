@@ -108,43 +108,7 @@ qplot(x = interval, y = AvgSteps, data = NewData, geom = c("line"), facets = day
 
 ```
 ```{r, include=FALSE}
-   file.rename(from="PA1_template.rmd", 
-               to="README.md")
+   file.copy(from="PA1_template.Rmd", to="README.md", copy.mode=TRUE)
 ```
 
 
-
-
-
-
-
-
-
-
-=======
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
-
-
-## Loading and preprocessing the data
-
-
-
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
-
-
-
-## Imputing missing values
-
-
-
-## Are there differences in activity patterns between weekdays and weekends?
->>>>>>> 80edf39c3bb508fee88e3394542f967dd3fd3270
