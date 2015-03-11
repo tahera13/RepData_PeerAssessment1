@@ -16,7 +16,7 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 ## Assignment
 
 ```{r setup_options, echo=FALSE}
-library(knitr)
+library(knitr, markdown)
 setwd("C:/Tahera/Personal/Coursera/Reproducible_Research/PA1")
 opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo=TRUE, fig.path='figures/PA-' )
 ```
@@ -106,6 +106,9 @@ library(ggplot2)
 qplot(x = interval, y = AvgSteps, data = NewData, geom = c("line"), facets = day~., 
       xlab= "Time Interval (minutes)", ylab = "Average Number of Steps", main = "Activity Patterns Between Weekdays and Weekends")
 
+```
+```{r, include=FALSE}
+   #file.rename(from="PA1_template.rmd", to="README.md")
 ```
 
 
