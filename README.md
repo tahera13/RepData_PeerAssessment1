@@ -48,6 +48,7 @@ print(sprintf("Mean total steps taken per day: %f ", MeanSteps))
 print(sprintf("Median total steps taken per day: %f ", MedianSteps))
 
 ```
+![alt tag](RepData_PeerAssessment1/figures/PA-unnamed-chunk-2-1.png)
 ### 3. What is the average daily activity pattern?
 ```{r}
 library(dplyr)
