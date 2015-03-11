@@ -15,10 +15,15 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 ## Assignment
 
+```{r setup_options, echo=FALSE}
+library(knitr)
+setwd("C:/Tahera/Personal/Coursera/Reproducible_Research/PA1")
+opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo=TRUE, fig.path='figures/PA-' )
+```
+
 ### 1. Loading and preprocessing the data
 
-```{r, echo = TRUE}
-setwd("C:/Tahera/Personal/Coursera/Reproducible_Research/PA1")
+```{r}
 url <- "http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 download.file(url, destfile = "pa1.zip", mode="wb")
 dateDownloaded <- date()
@@ -33,7 +38,7 @@ data$date <- as.Date(data$date, "%Y-%m-%d")
 
 ```
 ### 2. What is mean total number of steps taken per day?
-```{r, echo=TRUE}
+```{r}
 
 TotalSteps <- aggregate(steps ~ date, data = data, sum)
 hist(TotalSteps$steps, , main = "Total Number of Steps Per Day", xlab = "day", col = "blue")
@@ -44,7 +49,7 @@ print(sprintf("Median total steps taken per day: %f ", MedianSteps))
 
 ```
 ### 3. What is the average daily activity pattern?
-```{r, echo=TRUE}
+```{r}
 library(dplyr)
 # Removes date factors corresponding to NA values
 adata <- na.omit(data)
@@ -63,7 +68,7 @@ print(sprintf("The 5-min time interval with maximum average steps taken per day:
               MaxAvgInterval))
 ```
 ### 4. Imputing missing values
-```{r, echo=TRUE}
+```{r}
 MissingData <- sum(is.na(data))
 print(sprintf("The total number of missing values in the dataset: %i ", MissingData))
 
@@ -94,7 +99,7 @@ print("Mean and median of total steps taken per day are same before and after re
 
 ```
 ### 4. Are there differences in activity patterns between weekdays and weekends?
-```{r, echo=TRUE}
+```{r}
 NewData <- newdata %>% mutate(day = ifelse(as.factor(weekdays(newdata$date)) == c("Saturday", "Sunday"), "weekend", "weekday")) %>% group_by (interval, day) %>% summarize(AvgSteps = mean(steps))
 
 library(ggplot2)
