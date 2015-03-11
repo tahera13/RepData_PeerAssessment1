@@ -18,7 +18,7 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 ```{r setup_options, echo=FALSE}
 library(knitr, markdown)
 setwd("C:/Tahera/Personal/Coursera/Reproducible_Research/PA1")
-opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo=TRUE, fig.path='figures/PA-' )
+opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo=TRUE, fig.path='figures/PA-', fig.show='asis')
 ```
 
 ### 1. Loading and preprocessing the data
